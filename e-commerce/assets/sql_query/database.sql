@@ -1,0 +1,63 @@
+create database E_Commerce;
+use E_Commerce;
+CREATE TABLE Admin (
+    AdminID INT AUTO_INCREMENT PRIMARY KEY,
+    Username VARCHAR(100) NOT NULL UNIQUE,
+    Password VARCHAR(255) NOT NULL);
+CREATE TABLE IF NOT EXISTS User (
+    UserID INT AUTO_INCREMENT PRIMARY KEY,
+    UserName VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    Password VARCHAR(255) NOT NULL,
+    Address TEXT,
+    Gender ENUM('Male', 'Female', 'Other'),
+    ProfileImage VARCHAR(255),
+    RegistrationDate DATETIME DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS Category (
+    CategoryID INT AUTO_INCREMENT PRIMARY KEY,
+    CategoryName VARCHAR(100) NOT NULL);
+CREATE TABLE IF NOT EXISTS Product (
+    ProductID INT AUTO_INCREMENT PRIMARY KEY,
+    ProductName VARCHAR(100) NOT NULL,
+    ProductDescription TEXT,
+    ProductPrice DECIMAL(10, 2) NOT NULL,
+    CategoryID INT,
+    ProductImage VARCHAR(255),
+    FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
+);
+CREATE TABLE `Order` (
+    OrderID INT AUTO_INCREMENT PRIMARY KEY,
+    OrderDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    UserID INT,
+    TotalAmount DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES User(UserID)
+);
+CREATE TABLE OrderDetails (
+    OrderDetailID INT AUTO_INCREMENT PRIMARY KEY,
+    OrderID INT NOT NULL,
+    ProductName VARCHAR(100) NOT NULL,
+    ProductPrice DECIMAL(10, 2) NOT NULL,
+    Quantity INT NOT NULL,
+    Total DECIMAL(10, 2) NOT NULL,
+    Date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (OrderID) REFERENCES `Order`(OrderID) ON DELETE CASCADE
+);
+CREATE TABLE Payment (
+    PaymentID INT AUTO_INCREMENT PRIMARY KEY,
+    OrderID INT,
+    PaymentDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PaymentAmount DECIMAL(10, 2) NOT NULL,
+    PaymentMethod VARCHAR(50),
+    PaymentStatus VARCHAR(50),
+    FOREIGN KEY (OrderID) REFERENCES `Order`(OrderID)
+);
+CREATE TABLE Review (
+    ReviewID INT AUTO_INCREMENT PRIMARY KEY,
+    ProductID INT,
+    UserID INT,
+    Rating TINYINT NOT NULL CHECK (Rating BETWEEN 1 AND 5),
+    ReviewText TEXT,
+    FOREIGN KEY (ProductID) REFERENCES Product(ProductID),
+    FOREIGN KEY (UserID) REFERENCES User(UserID)
+);
+show tables;

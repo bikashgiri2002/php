@@ -1,0 +1,160 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+header{
+    box-sizing: border-box;
+    height: 70px;
+    padding: 10px;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    background-color: blueviolet
+}
+nav{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_icon{
+    height: 100%;
+    width: 50px;
+}
+li{
+    list-style: none;
+}
+.options{
+    width: 60%;
+}
+.options ul{
+    display: flex;
+    justify-content: space-between;
+}
+main{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+.card{
+    height: 500px;
+    width: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px 1px rgb(86, 84, 84,0.7);
+}
+.card_body{
+    height: 70%;
+    width: 100%;
+    border-radius: 10px;
+}
+.card_body img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+.titel{
+    width: 100%;
+    border-radius: 10px;
+    margin: auto auto;
+    text-align: center;
+}
+.description{
+    padding: 30px;
+    text-align: center;
+    font-size: 10px;
+}
+select{
+    background-color: rgba(237, 230, 230,0);
+    backface-visibility: visible;
+}
+.pop-up{
+    display: none;
+    height: 90vh;
+    top: 5%;
+    position: fixed;
+    border-radius: 40px;
+    bottom: 10%;
+    right: 20%;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+}
+.form-container {
+    max-width: 500px;
+    height: 100%;
+    padding: 10px;
+    padding-top: 0;
+    background-color: white;
+}
+.form-container input[type=text], .form-container input[type=password], .form-container input[type=email] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+    height: 40px;
+}
+.form-container .cancel {
+    background-color: red;
+}
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 30%;
+    right: 30%;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+.profile{
+    height: 100%;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.profile button{
+    height: 60%;
+    width: 40%;
+    border-radius: 10px;
+    background-color: red;
+}
