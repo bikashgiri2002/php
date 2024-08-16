@@ -1,3 +1,6 @@
+<?php
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,36 +11,6 @@
     <title>Geo Hub</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="nav_icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-            <path
-              d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
-            />
-          </svg>
-        </div>
-        <div class="options">
-          <ul>
-            <li>Home</li>
-            <li>
-              <select>
-                <option value="">Catagories</option>
-                <option value="">Hammer</option>
-                <option value="compus">Compus</option>
-                <option value="">Map</option>
-              </select>
-            </li>
-            <li>Refurbished</li>
-            <li>Clothes</li>
-          </ul>
-        </div>
-        <div class="profile">
-          <?php include "includes/profile.php"; ?>
-        </div>
-      </nav>
-    </header>
     <main>
       <div class="container">
         <?php include "includes/card.php"; ?>
@@ -90,7 +63,7 @@
       </form>
     </div>
     <div class="form-popup" id="myLogInForm">
-        <form action="user/actions/logIn.php" class="form-container">
+        <form action="user/actions/logIn.php" class="form-container" method="POST">
             <h1>Login</h1>
 
             <label for="email"><b>Email</b></label>
@@ -103,8 +76,15 @@
             <button type="button" class="btn cancel" onclick="closeLogInForm()">Close</button>
         </form>
     </div>
+    <!-- <script>
+      function sessionKill(){
+        <?php
+          session_start();
+          session_unset();
+          session_destroy();
+          header("Location:../index.php");
+        ?>
+  }
+    </script> -->
   </body>
 </html>
-<?php
-  
-?>
