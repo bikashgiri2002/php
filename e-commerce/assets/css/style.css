@@ -158,3 +158,8 @@ textarea{
     border-radius: 10px;
     background-color: red;
 }
+img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}

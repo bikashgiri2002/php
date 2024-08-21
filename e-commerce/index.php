@@ -112,6 +112,8 @@
           session_start();
         ?>
   }
+  
     </script> -->
+    <a href="logout.php">log out</a>
   </body>
 </html>
