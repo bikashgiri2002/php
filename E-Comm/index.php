@@ -72,7 +72,7 @@
                 <a class="nav-link" href="admin/adminlogin.php">Admin</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"
+                <a class="nav-link" href="user/cart_view.php"
                   ><i class="fa-solid fa-cart-shopping"></i
                 ></a>
               </li>

@@ -92,6 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $_SESSION["Email"] = $row["Email"];
             $_SESSION["UserName"] = $row["UserName"];
             $_SESSION["ProfileImage"] = $row["ProfileImage"];
+            $_SESSION["UserID"] = $row["UserID"];
             header("location:../index.php");
         }else{
             echo("invalid password");
